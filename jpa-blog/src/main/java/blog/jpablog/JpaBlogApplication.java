@@ -1,4 +1,4 @@
-package jpablog.jpablog;
+package blog.jpablog;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

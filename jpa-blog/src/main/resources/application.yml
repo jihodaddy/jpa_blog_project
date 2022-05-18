@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: create
+    open-in-view: false
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        format_sql: true
+# initialization-mode: always # spring 구동 시 resources 하위 .sql 실행
+# continue-on-error: true # 에러나도 실행. 개발에서만 사용
+
