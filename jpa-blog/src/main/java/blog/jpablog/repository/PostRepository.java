@@ -8,5 +8,5 @@ import blog.jpablog.domain.entity.Post;;
 
 @Repository
 public interface PostRepository extends JpaRepository<Post, Long>, JpaSpecificationExecutor<Post>{
-  
+    
 }
