@@ -25,7 +25,6 @@ public class PostServiceImp implements PostService {
 
   @Override
   public Map<String, Object> savePost(Post post) {
-    // TODO Auto-generated method stub
     return null;
   }
 
