@@ -14,17 +14,19 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
-    open-in-view: false
     show-sql: true
+    open-in-view: false
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     properties:
       hibernate:
         format_sql: true
+
+    # defer-datasource-initialization: true
   # sql:
   #   init:
-  #     mode: always
+  #     mode: always # always, embedded, never
   #     data-locations: classpath:sql/data.sql
-  #     defer-datasource-initialization: true
+  #     encoding: UTF-8
 # initialization-mode: always # spring 구동 시 resources 하위 .sql 실행
 # continue-on-error: true # 에러나도 실행. 개발에서만 사용
 
