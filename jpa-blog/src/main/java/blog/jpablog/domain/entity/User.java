@@ -6,8 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.AllArgsConstructor;
@@ -22,17 +22,18 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "user_table")
 public class User {
   
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY) 
-  private long userid;
+  private long userId;
 
-  private String password;
+  private String userPw;
 
-  private String username;
+  private String userName;
 
-  private String email;
+  private String userEmail;
 
   private String role;
 

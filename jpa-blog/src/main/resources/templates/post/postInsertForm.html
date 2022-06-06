@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- 보기 편하게 CSS추가해주었습니다. -->
+    <style>
+      * {
+        text-align: center;
+      }
+      #editor {
+        /* border : 1px solid; */
+        width: 50%;
+        margin: 0 auto;
+      }
+    </style>
+    <!-- TOAST UI Editor CDN URL(CSS)-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"
+    />
+  </head>
+  <body>
+    <h1>TOAST UI Editor 만들기</h1>
+    <!-- TOAST UI Editor가 들어갈 div태그 -->
+    <div id="editor"></div>
+    <!-- TOAST UI Editor CDN URL(JS) -->
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <!-- TOAST UI Editor 생성 JavaScript 코드 -->
+    <script>
+      const editor = new toastui.Editor({
+        el: document.querySelector("#editor"),
+        previewStyle: "vertical",
+        height: "500px",
+        initialValue: "안녕하세요.",
+      });
+    </script>
+  </body>
+</html>

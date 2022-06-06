@@ -1,8 +1,6 @@
 package blog.jpablog.controller;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import blog.jpablog.domain.entity.Post;
-import blog.jpablog.domain.entity.PostSpecs;
-import blog.jpablog.domain.entity.PostSpecs.SearchKey;
 import blog.jpablog.repository.PostRepository;
 
 @RestController
@@ -28,16 +23,21 @@ public class PostController {
   @Autowired
   PostRepository postRepository;
 
-  @GetMapping("/list")
-  public List<Post> getPostList(@RequestParam(required = false) Map<String, Object> searchRequest) {
-      Map<SearchKey, Object> searchKeys = new HashMap<>();
-      for (String key : searchRequest.keySet()) {
-          searchKeys.put(SearchKey.valueOf(key.toUpperCase()), searchRequest.get(key));
-      }
-      return searchKeys.isEmpty()
-              ? postRepository.findAll()
-              : postRepository.findAll(PostSpecs.searchWith(searchKeys));
+  @GetMapping("list")
+  public List<Post> getPostList() {
+    return postRepository.findAll();
 }
+
+//   @GetMapping("/list")
+//   public List<Post> getPostList(@RequestParam(required = false) Map<String, Object> searchRequest) {
+//       Map<SearchKey, Object> searchKeys = new HashMap<>();
+//       for (String key : searchRequest.keySet()) {
+//           searchKeys.put(SearchKey.valueOf(key.toUpperCase()), searchRequest.get(key));
+//       }
+//       return searchKeys.isEmpty()
+//               ? postRepository.findAll()
+//               : postRepository.findAll(PostSpecs.searchWith(searchKeys));
+// }
 
   @GetMapping("/{id}")
   public Post getPost(@PathVariable String id) {

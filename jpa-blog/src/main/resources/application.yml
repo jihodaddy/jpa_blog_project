@@ -30,3 +30,6 @@ spring:
 # initialization-mode: always # spring 구동 시 resources 하위 .sql 실행
 # continue-on-error: true # 에러나도 실행. 개발에서만 사용
 
+# logging:
+#   level:
+#     org.hibernate.SQL: debug
